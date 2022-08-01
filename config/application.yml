@@ -1,0 +1,13 @@
+defaults: &defaults
+  basic_auth:
+    username: <%= ENV['BASIC_AUTH_USERNAME'] || 'admin_ops' %>
+    password: <%= ENV['BASIC_AUTH_PASSWORD'] || 'billing' %>
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults

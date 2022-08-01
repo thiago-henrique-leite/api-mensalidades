@@ -1,0 +1,15 @@
+"pt-BR":
+  errors:
+    bills:
+      amount: 'valor deve ser maior que zero'
+      due_date: 'data de vencimento inválida'
+      status: 'status deve ser open, pending ou paid'
+    enrollments:
+      amount: 'valor deve ser maior que zero'
+      due_day: 'dia de vencimento inválido'
+      installments: 'quantidade de mensalidades deve ser maior que zero'
+    students:
+      cpf: 'cpf inválido'
+      birthdate: 'data de nascimento inválida'
+      name: 'nome não pode ser vazio'
+      payment_method: 'método de pagamento deve ser credit_card, boleto ou pix'
