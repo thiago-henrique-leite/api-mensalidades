@@ -25,9 +25,9 @@ module BillingApi
     config.load_defaults 6.1
 
     I18n.config.enforce_available_locales = false
-    config.i18n.available_locales = ['pt-BR', :en]
-    config.i18n.default_locale = 'pt-BR'
-    config.i18n.locale = 'pt-BR'
+    # config.i18n.available_locales = ['pt-BR', :en]
+    # config.i18n.default_locale = 'pt-BR'
+    # config.i18n.locale = 'pt-BR'
 
     config.before_initialize do |_app|
       require "#{Rails.root}/config/settings.rb"
