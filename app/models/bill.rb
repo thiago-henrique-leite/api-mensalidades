@@ -3,7 +3,13 @@
 class Bill < ApplicationRecord
   belongs_to :enrollment
 
-  validates :amount, numericality: { greater_than: 0, message: I18n.t('errors.bills.amount') }
-  validates :due_date, presence: { message: I18n.t('errors.bills.due_date') }
-  validates :status, inclusion: { in: %w[open pending paid], message: I18n.t('errors.bills.status') }
+  validates :amount, numericality: { greater_than: 0 }
+  validates :due_date, presence: true
+  validates :status, presence: true
+
+  enum status: {
+    open: 'open',
+    pending: 'pending',
+    paid: 'paid'
+  }
 end

@@ -3,10 +3,14 @@
 class Student < ApplicationRecord
   has_many :enrollments, dependent: :destroy
 
-  PAYMENT_METHODS = %w[boleto credit_card pix].freeze
-
   validates :cpf, cpf: true
-  validates :birthdate, presence: { message: I18n.t('errors.students.birthdate') }
-  validates :name, presence: { message: I18n.t('errors.students.name') }
-  validates :payment_method, inclusion: { in: PAYMENT_METHODS, message: I18n.t('errors.students.payment_method') }
+  validates :birthdate, presence: true
+  validates :name, presence: true
+  validates :payment_method, presence: true
+
+  enum payment_method: {
+    boleto: 'boleto',
+    credit_card: 'credit_card',
+    pix: 'pix'
+  }
 end
