@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'cpf_cnpj'
 gem 'http', '~> 4.0'
 gem 'kaminari'
+gem 'money-rails'
 gem 'pg', '~> 1.1'
 gem 'pry-rails'
 gem 'puma', '~> 5.0'
