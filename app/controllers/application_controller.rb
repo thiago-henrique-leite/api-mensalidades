@@ -2,6 +2,6 @@
 
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Basic::ControllerMethods
-  include ExceptionTreatable
+  include ExceptionHandler
   include Paginable
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ExceptionTreatable
+module ExceptionHandler
   extend ActiveSupport::Concern
 
   def self.included(base)
