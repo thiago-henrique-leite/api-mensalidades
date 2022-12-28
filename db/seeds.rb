@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 ActiveRecord::Base.transaction do
   10.times do
     Student.create!(

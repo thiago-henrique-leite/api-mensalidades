@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Student < ApplicationRecord
   has_many :enrollments, dependent: :destroy
 

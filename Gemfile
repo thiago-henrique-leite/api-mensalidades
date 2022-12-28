@@ -1,5 +1,3 @@
-# rubocop:disable Lint/MissingCopEnableDirective, Style/FrozenStringLiteralComment
-
 source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
