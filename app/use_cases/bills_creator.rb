@@ -20,24 +20,22 @@ class BillsCreator
     @amounts ||= Money.from_amount(amount).allocate(installments).map(&:to_f)
   end
 
-  def effective_due_date(date)
-    Date.civil(date.year, date.month, due_day)
-  rescue Date::Error
-    Date.civil(date.year, date.month, -1)
+  def create_bills
+    amounts.each_with_index do |amount, index|
+      date = first_due_date.next_month(index)
+
+      Bill.create!(amount: amount, due_date: effective_due_date(date), enrollment: enrollment)
+    end
   end
 
-  def create_bills
-    first_date = today.day < due_day ? today : today.next_month
+  def effective_due_date(date)
+    date.change(day: due_day)
+  rescue Date::Error
+    date.end_of_month
+  end
 
-    installments.times do |index|
-      date = first_date.next_month(index)
-
-      Bill.create!(
-        amount: amounts[index],
-        due_date: effective_due_date(date),
-        enrollment: enrollment
-      )
-    end
+  def first_due_date
+    @first_due_date ||= today.day < due_day ? today : today.next_month
   end
 
   def today
