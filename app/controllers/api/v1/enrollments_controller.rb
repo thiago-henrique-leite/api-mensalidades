@@ -1,8 +1,7 @@
 module Api
   module V1
     class EnrollmentsController < ApplicationController
-      http_basic_authenticate_with name: Settings.basic_auth.username,
-                                   password: Settings.basic_auth.password
+      http_basic_authenticate_with name: Settings.auth.username, password: Settings.auth.password
 
       def index
         render json: enrollments
