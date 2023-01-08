@@ -1,5 +1,4 @@
 /tmp/*
 /data/*
 /log/*
-
-log/development.log
+/db/*
