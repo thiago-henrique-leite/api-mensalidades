@@ -1,5 +1,5 @@
 class Api::EnrollmentsController < ApplicationController
-  http_basic_authenticate_with name: Settings.auth.username, password: Settings.auth.password
+  http_basic_authenticate_with name: Settings.auth.username, password: Settings.auth.password, only: [:create]
 
   def index
     render json: enrollments
