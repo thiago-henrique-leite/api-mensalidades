@@ -12,7 +12,7 @@ module Api
       def create
         student = Student.create(student_params)
 
-        return render json: student if student.save
+        return render json: student, status: :created if student.save
 
         render json: { error: student.errors }, status: :bad_request
       end

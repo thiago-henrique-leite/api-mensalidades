@@ -14,7 +14,7 @@ module Api
       def create
         enrollment = Enrollment.create(enrollment_params)
 
-        return render json: enrollment if enrollment.save
+        return render json: enrollment, status: :created if enrollment.save
 
         render json: { error: enrollment.errors }, status: :bad_request
       end
