@@ -58,6 +58,9 @@ Rails/UnknownEnv:
     - test
     - development
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 
