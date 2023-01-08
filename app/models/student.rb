@@ -1,8 +1,8 @@
 class Student < ApplicationRecord
-  has_many :enrollments, dependent: :destroy
+  has_many :enrollments
 
-  validates :cpf, cpf: true
   validates :birthdate, presence: true
+  validates :cpf, cpf: true
   validates :name, presence: true
   validates :payment_method, presence: true
 

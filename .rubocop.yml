@@ -22,6 +22,10 @@ Layout/LineLength:
 Metrics/CyclomaticComplexity:
   Max: 10
 
+Layout/FirstHashElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
 Metrics/AbcSize:
   Enabled: false
 
@@ -48,6 +52,9 @@ Metrics/PerceivedComplexity:
 Metrics/BlockLength:
   Enabled: false
 
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
 
@@ -62,6 +69,9 @@ Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/Documentation:
+  Enabled: false
+
+Style/ExponentialNotation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
